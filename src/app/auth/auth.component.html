@@ -1,0 +1,87 @@
+<div
+  [hidden]="submitted"
+  class="min-h-screen flex items-center justify-center bg-gray-900"
+>
+  <form
+    #loginForm="ngForm"
+    (ngSubmit)="submitHandler(loginForm)"
+    class="w-full max-w-md p-8 bg-gray-800 shadow-md rounded-lg"
+  >
+    <h1 class="text-4xl font-bold text-center mb-6 text-gray-100">Auth Form</h1>
+    <div class="form-group mb-6">
+      <label for="name" class="block text-lg font-medium text-gray-300 mb-2"
+        >Name</label
+      >
+      <input
+        type="text"
+        class="form-control text-lg font-serif border border-gray-600 rounded-lg p-2 w-full bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
+        id="name"
+        [(ngModel)]="userName"
+        name="username"
+        #name1="ngModel"
+        placeholder="Enter your name"
+        required
+      />
+      <span
+        [hidden]="name1.valid || name1.pristine"
+        class="text-red-400 text-sm mt-1"
+      >
+        Name is required
+      </span>
+    </div>
+    <div class="form-group mb-6">
+      <label for="gender" class="block text-lg font-medium text-gray-300 mb-2"
+        >Gender</label
+      >
+      <select
+        name="gender"
+        id="gender"
+        [(ngModel)]="gender"
+        #gender="ngModel"
+        class="border border-gray-600 rounded-lg p-2 w-full bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400"
+      >
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <span
+        [hidden]="gender.valid || gender.pristine"
+        class="text-red-400 text-sm mt-1"
+      >
+        Gender is required
+      </span>
+    </div>
+
+    <div class="form-group mb-6">
+      <label for="pswd" class="block text-lg font-medium text-gray-300 mb-2"
+        >Password</label
+      >
+      <input
+        type="password"
+        class="border border-gray-600 rounded-lg p-2 w-full form-control text-lg bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
+        id="pswd"
+        [(ngModel)]="userPswd"
+        name="password"
+        minlength="5"
+        placeholder="Enter your password"
+        required
+        #pswd="ngModel"
+      />
+      <span
+        [hidden]="pswd.valid || pswd.pristine"
+        class="text-red-400 text-sm mt-1"
+      >
+        Password is required
+      </span>
+    </div>
+
+    <button
+      class="w-full bg-sky-500 disabled:bg-sky-400 hover:bg-sky-600 text-white text-lg font-medium py-2 rounded-lg transition duration-200"
+      type="submit"
+      [disabled]="!loginForm.form.valid"
+    >
+      Submit
+    </button>
+    <!-- {{ userName }} -->
+  </form>
+</div>

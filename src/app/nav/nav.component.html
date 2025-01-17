@@ -1,0 +1,19 @@
+<nav
+  class="bg-g ray-800 mt-[20%] p-4 shadow-lg text-center text-lg flex flex-col"
+>
+  <div class="flex flex-col gap-2">
+    <a
+      [routerLink]="['list-issues', 2]"
+      RouterLinkActive="bg-sky-600"
+      class="bg-sky-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-sky-700 transition duration-200"
+    >
+      View All Issues
+    </a>
+    <a
+      routerLink="create-issue"
+      class="bg-sky-700 text-white/90 px-4 py-2 rounded-lg shadow-md hover:bg-sky-700 transition duration-200"
+    >
+      Create Issue +
+    </a>
+  </div>
+</nav>

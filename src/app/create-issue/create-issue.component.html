@@ -1,0 +1,16 @@
+<label for="issue" class="text-gray-200">Enter Issue</label>
+<input
+  type="text"
+  id="issue"
+  name="issue"
+  [(ngModel)]="issue"
+  placeholder="Enter Issue"
+  class="form-control text-lg font-serif border border-gray-600 rounded-lg p-2 w-full bg-gray-700 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
+  (input)="getInput()"
+/>
+
+@if(issue.length > 0) { First Issue is
+<div>{{ issue }}</div>
+}
+
+<button (click)="send()" class="border">Send to List oF Issues</button>
