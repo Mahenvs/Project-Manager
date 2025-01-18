@@ -1,6 +1,6 @@
 import { ChildComponent } from '@/src/app/child/child.component';
 import { UtilService } from '@/src/app/shared/util.service';
-import { Component, ViewChild } from '@angular/core';
+import { Component, effect, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -24,7 +24,9 @@ export class TestComponent {
 
   }
   constructor(public utilService: UtilService) {
-
+    effect(() => {
+      this.counterVal = this.utilService.counter();
+    })
   }
 
   title = 'jiraClone';
@@ -37,7 +39,8 @@ export class TestComponent {
   ngOnInit(): void {
     // Redirect with query parameters
     // this.router.navigate(['/auth'], { queryParams: { newUser: 'true' } });
-    this.counterVal = this.utilService.counter();
+
+
   }
 
   @ViewChild(ChildComponent) _child!: ChildComponent;

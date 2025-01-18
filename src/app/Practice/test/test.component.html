@@ -11,7 +11,7 @@
 <label for=""
   >Enter City Name <input class="text-black" type="text" #city
 /></label>
-<button (click)="sendToChild(city.value)">sends</button>
+<button (click)="sendToChild(city.value)">send</button>
 
 <!-- Store Testing -->
 <mat-divider class="py-2"></mat-divider>
@@ -22,4 +22,4 @@
 
   <button mat-stroked-button (click)="decrement()">Decrement</button>
 </div>
-<h2>{{ "Counter -->" }} {{ this.utilService.counter() }}</h2>
+<h2>{{ "Counter -->" }} {{ counterVal }}</h2>
