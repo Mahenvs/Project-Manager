@@ -1,7 +1,7 @@
 import { ChildComponent } from '@/src/app/child/child.component';
 import { User } from '@/src/app/models/models';
 import { UtilService } from '@/src/app/shared/util.service';
-import { Component, effect, signal, ViewChild, WritableSignal } from '@angular/core';
+import { Component, computed, effect, signal, ViewChild, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -56,7 +56,17 @@ export class TestComponent {
 
   // Adding users using computed signals
   listOfUsers: WritableSignal<User[]> = signal([])
+  usersLength = computed(() => {
+    return this.listOfUsers().length
+  })
+
+  // addUser(user: string) {
+  //   this.listOfUsers.update(prev => [...prev, { id: this.listOfUsers().length + 1, name: user }])
+  // }
+
+  // we can make use of the computed signal to make any operations as here we are getting the id of each user from computed signal
   addUser(user: string) {
-    this.listOfUsers.update(prev => [...prev, { id: this.listOfUsers().length + 1, name: user }])
+    // This computed signal is readonly, meaning it doesn't provide updated,set and mutate methods on it which signal provides which is Writable Signal
+    this.listOfUsers.update(prev => [...prev, { id: this.usersLength() + 1, name: user }])
   }
 }

@@ -27,6 +27,7 @@
 <mat-divider class="py-2"></mat-divider>
 
 <!-- Adding Users using Computed Signals -->
+@defer (on timer(1000ms)) {
 <div class="mb-2">
   <h3 class="text-lg font-medium">Adding Users to the list</h3>
   <div class="flex gap-2 align-middle items-center">
@@ -44,3 +45,6 @@
     }
   </div>
 </div>
+} @placeholder {
+<h2>Loading content</h2>
+}
