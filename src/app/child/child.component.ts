@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -9,10 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ChildComponent implements OnInit {
   @Input()
   title1!: string;
+
+  @Output() setTitle = new EventEmitter<string>();
   ngOnInit() {
     console.log(this.title1);
 
-
   }
 
+  sendToParent() {
+    this.setTitle.emit("I am set from child")
+
+  }
 }

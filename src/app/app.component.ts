@@ -12,11 +12,16 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class AppComponent implements OnInit {
+
   constructor(private router: Router) { }
   title = 'jiraClone';
-
+  child: string | undefined
+  childData(value: string) {
+    this.child = value
+  };
   ngOnInit(): void {
     // Redirect with query parameters
     // this.router.navigate(['/auth'], { queryParams: { newUser: 'true' } });
   }
+
 }
