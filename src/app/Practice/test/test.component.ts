@@ -1,6 +1,7 @@
 import { ChildComponent } from '@/src/app/child/child.component';
+import { User } from '@/src/app/models/models';
 import { UtilService } from '@/src/app/shared/util.service';
-import { Component, effect, ViewChild } from '@angular/core';
+import { Component, effect, signal, ViewChild, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -50,5 +51,12 @@ export class TestComponent {
     const data = this._child.addCities(city)
     console.log("Data complete is ", data);
 
+  }
+
+
+  // Adding users using computed signals
+  listOfUsers: WritableSignal<User[]> = signal([])
+  addUser(user: string) {
+    this.listOfUsers.update(prev => [...prev, { id: this.listOfUsers().length + 1, name: user }])
   }
 }

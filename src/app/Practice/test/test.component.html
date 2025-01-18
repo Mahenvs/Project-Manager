@@ -11,8 +11,9 @@
 <label for=""
   >Enter City Name <input class="text-black" type="text" #city
 /></label>
-<button (click)="sendToChild(city.value)">send</button>
-
+<div class="mb-2">
+  <button mat-stroked-button (click)="sendToChild(city.value)">send</button>
+</div>
 <!-- Store Testing -->
 <mat-divider class="py-2"></mat-divider>
 <!-- <mat-divider></mat-divider> -->
@@ -23,3 +24,23 @@
   <button mat-stroked-button (click)="decrement()">Decrement</button>
 </div>
 <h2>{{ "Counter -->" }} {{ counterVal }}</h2>
+<mat-divider class="py-2"></mat-divider>
+
+<!-- Adding Users using Computed Signals -->
+<div class="mb-2">
+  <h3 class="text-lg font-medium">Adding Users to the list</h3>
+  <div class="flex gap-2 align-middle items-center">
+    <label for=""
+      >Enter User Name <input class="text-black" type="text" #user
+    /></label>
+    <button mat-stroked-button (click)="addUser(user.value)">Add User</button>
+  </div>
+  <div>
+    <h2 class="text-xl font-medium">Current users are</h2>
+    @if(listOfUsers().length ==0){ No Users } @for(user of listOfUsers();track
+    user){
+    <div>{{ user.id }} - {{ user.name }}</div>
+
+    }
+  </div>
+</div>
