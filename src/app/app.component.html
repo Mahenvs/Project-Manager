@@ -1,3 +1,6 @@
 <router-outlet></router-outlet>
 
-<!-- <app-child></app-child> -->
+<input type="text" [(ngModel)]="title" name="title" />
+
+<!-- Passing Data from parent to child component -->
+<app-child [title1]="title"></app-child>

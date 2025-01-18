@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })
-export class ChildComponent {
+export class ChildComponent implements OnInit {
+  @Input()
+  title1!: string;
+  ngOnInit() {
+    console.log(this.title1);
+
+
+  }
 
 }
