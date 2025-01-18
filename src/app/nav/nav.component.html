@@ -1,6 +1,23 @@
 <nav
   class="bg-g ray-800 mt-[20%] p-4 shadow-lg text-center text-lg flex flex-col"
 >
+  <div class="flex flex-row gap-2 mb-6">
+    <a
+      [routerLink]="['../auths/register']"
+      RouterLinkActive="bg-sky-600"
+      class="cursor-auto underline text-white px-4 py-2 rounded-lg hover:cursor-pointer shadow-md transition duration-200"
+    >
+      New User
+    </a>
+    <span class="border-r-2"></span>
+    <a
+      [routerLink]="['../auth/login']"
+      RouterLinkActive="bg-sky-600"
+      class="cursor-auto underline text-white px-4 py-2 rounded-lg hover:cursor-pointer shadow-md transition duration-200"
+    >
+      Login
+    </a>
+  </div>
   <div class="flex flex-col gap-2">
     <a
       [routerLink]="['list-issues', 2]"

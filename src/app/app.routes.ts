@@ -1,19 +1,25 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
-import { AuthComponent } from '@/src/app/auth/auth.component';
+
+
 import { CreateIssueComponent } from '@/src/app/create-issue/create-issue.component';
 import { ListIssuesComponent } from '@/src/app/list-issues/list-issues.component';
+import { SignInComponent } from '@/src/app/sign-in/sign-in.component';
+import { SignUpComponent } from '@/src/app/sign-up/sign-up.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'auth/login',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: AuthComponent
+    path: 'auth/login',
+    component: SignInComponent
+  },
+  {
+    path: 'auth/register',
+    component: SignUpComponent
   }, {
     path: 'home',
     component: HomeComponent,

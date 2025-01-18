@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class UtilService {
   private issueSubject = new BehaviorSubject<string[]>([]);
   issue$ = this.issueSubject.asObservable();
+
   constructor() {
 
   }
