@@ -27,7 +27,8 @@
 <mat-divider class="py-2"></mat-divider>
 
 <!-- Adding Users using Computed Signals -->
-@defer (on timer(1000ms)) {
+<!-- when we have viewport make sure you have the @placeholder tag intact with this syntax -->
+@defer (on viewport) {
 <div class="mb-2">
   <h3 class="text-lg font-medium">Adding Users to the list</h3>
   <div class="flex gap-2 align-middle items-center">
