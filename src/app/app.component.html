@@ -1,9 +1,1 @@
 <router-outlet></router-outlet>
-
-<div class="text-white p-4">
-  I stay in parent, but cam from child {{ child }}
-</div>
-<input type="text" [(ngModel)]="title" name="title" />
-
-<!-- Passing Data from parent to child component -->
-<app-child [title1]="title" (setTitle)="childData($event)"></app-child>

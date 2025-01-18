@@ -1,27 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { ChildComponent } from "./child/child.component";
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ChildComponent, FormsModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit {
-
-  constructor(private router: Router) { }
+export class AppComponent {
   title = 'jiraClone';
-  child: string | undefined
-  childData(value: string) {
-    this.child = value
-  };
-  ngOnInit(): void {
-    // Redirect with query parameters
-    // this.router.navigate(['/auth'], { queryParams: { newUser: 'true' } });
-  }
-
 }

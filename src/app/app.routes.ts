@@ -6,6 +6,7 @@ import { CreateIssueComponent } from '@/src/app/create-issue/create-issue.compon
 import { ListIssuesComponent } from '@/src/app/list-issues/list-issues.component';
 import { SignInComponent } from '@/src/app/sign-in/sign-in.component';
 import { SignUpComponent } from '@/src/app/sign-up/sign-up.component';
+import { TestComponent } from '@/src/app/Practice/test/test.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     path: 'auth/register',
     component: SignUpComponent
   }, {
+    path: 'test',
+    component: TestComponent
+  },
+  {
     path: 'home',
     component: HomeComponent,
     children: [

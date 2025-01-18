@@ -20,4 +20,13 @@ export class ChildComponent implements OnInit {
     this.setTitle.emit("I am set from child")
 
   }
+  cities: string[] = ['Hyd', "Mum"]
+
+  addCities(city: string) {
+    console.log(city);
+
+    this.cities.push(city)
+    console.log(this.cities);
+    return this.cities
+  }
 }

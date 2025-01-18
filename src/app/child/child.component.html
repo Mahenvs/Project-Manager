@@ -1,6 +1,13 @@
-<div class="bg-slate-100 text-black h-40">
+<div class="text-white h-40">
   <p>child works!</p>
   {{ title1 }}
 
   <button (click)="sendToParent()">Send To Parent</button>
+
+  <!-- List of Cities -->
+  <ul>
+    @for(city of cities;track city){
+    <li>{{ city }}oj</li>
+    }
+  </ul>
 </div>

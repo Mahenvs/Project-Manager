@@ -1,0 +1,25 @@
+<p>test works!</p>
+<div class="text-white p-4">
+  I stay in parent, but cam from child {{ child }}
+</div>
+<!-- Passing Data from parent to child component -->
+
+<input type="text" [(ngModel)]="title" class="text-black" name="title" />
+<app-child [title1]="title" (setTitle)="childData($event)"></app-child>
+
+<!-- Passing Data from parent to child component through ViewChild-->
+<label for=""
+  >Enter City Name <input class="text-black" type="text" #city
+/></label>
+<button (click)="sendToChild(city.value)">sends</button>
+
+<!-- Store Testing -->
+<mat-divider class="py-2"></mat-divider>
+<!-- <mat-divider></mat-divider> -->
+<div class="flex gap-2">
+  <button mat-stroked-butto (click)="increment()">Increment</button>
+  <button mat-flat-button (click)="reset()">reset</button>
+
+  <button mat-stroked-button (click)="decrement()">Decrement</button>
+</div>
+<h2>{{ "Counter -->" }} {{ this.utilService.counter() }}</h2>
