@@ -29,7 +29,7 @@
 <!-- Adding Users using Computed Signals -->
 <!-- when we have viewport make sure you have the @placeholder tag intact with this syntax -->
 
-<!-- when we have hover, on hover of that area @placeholder content will be loaded-->
+<!-- when we have hover, on hover of that area @placeholder content will be loadedng-->
 @defer (on hover) {
 <div class="mb-2">
   <h3 class="text-lg font-medium">Adding Users to the list</h3>
@@ -50,4 +50,16 @@
 </div>
 } @placeholder {
 <h2>Loading content</h2>
+}
+
+<!-- Observables  -->
+
+<h3 class="text-xl font-medium text-amber-600 my-4">Observables Data</h3>
+
+@for(student of listOfStudents ;track student){
+<div>
+  <h5 class="text-xl font-normal text-sky-200 my-4">
+    Student Name- {{ student.name }}
+  </h5>
+</div>
 }

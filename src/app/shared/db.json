@@ -1,0 +1,52 @@
+{
+  "studentData": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "age": 20,
+      "email": "john.doe@example.com",
+      "course": "Computer Science",
+      "grade": "A"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "age": 22,
+      "email": "jane.smith@example.com",
+      "course": "Mathematics",
+      "grade": "B"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "age": 21,
+      "email": "michael.johnson@example.com",
+      "course": "Physics",
+      "grade": "A"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "age": 23,
+      "email": "emily.davis@example.com",
+      "course": "Chemistry",
+      "grade": "B"
+    },
+    {
+      "id": 5,
+      "name": "William Brown",
+      "age": 20,
+      "email": "william.brown@example.com",
+      "course": "Biology",
+      "grade": "C"
+    },
+    {
+      "id": 6,
+      "name": "Sophia Wilson",
+      "age": 22,
+      "email": "sophia.wilson@example.com",
+      "course": "History",
+      "grade": "A"
+    }
+  ]
+}

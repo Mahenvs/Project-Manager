@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -5,12 +6,17 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UtilService {
+  url = "http://localhost:3000/studentData"
+  constructor(private http: HttpClient) {
+
+  }
+  getStudents() {
+    return this.http.get(this.url)
+  }
   private issueSubject = new BehaviorSubject<string[]>([]);
   issue$ = this.issueSubject.asObservable();
   counter = signal(0)
-  constructor() {
 
-  }
 
   increment() {
     // return

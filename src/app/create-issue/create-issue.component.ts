@@ -20,11 +20,9 @@ export class CreateIssueComponent implements OnInit {
 
   issue = ''
   ngOnInit() {
-    // this.cdr.detectChanges(); // Forces change detection
-
     console.log("I have been called",);
-
   }
+
   getInput() {
     console.log(this.issue);
   }

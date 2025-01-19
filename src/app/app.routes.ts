@@ -11,7 +11,7 @@ import { TestComponent } from '@/src/app/Practice/test/test.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
+    redirectTo: 'test',
     pathMatch: 'full'
   },
   {
